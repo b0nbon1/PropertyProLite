@@ -533,4 +533,8 @@ footer p
     #login-form {
         padding: 0 40px;
     }
+    #email, #password, #fname, #lname, #phoneNumber, #address 
+    {
+    font-size: 14px;
+    }
 }
