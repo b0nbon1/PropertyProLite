@@ -364,6 +364,15 @@ main.container
 {
     margin-top: 6rem;
 }
+.bg
+{
+    background-blend-mode: screen;
+    background-image:url('../images/home3.jpg');
+    position: relative;
+    background-color: rgb(14, 10, 10);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .login-modal{
     display: none;
     position: fixed;
@@ -417,7 +426,7 @@ main.container
   
   
   #login-form-wrap {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.842);
     width: 55%;
     margin: 30px auto;
     text-align: center;
