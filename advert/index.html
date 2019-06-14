@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../assets/css/main.css">
+    </head>
+    <body>
+        <div id="preloader">
+            <div id="center">
+                <span class="window"></span>
+                <span class="window"></span>
+                <span class="window"></span>
+                <span class="window"></span>
+            </div>
+        </div>
+    
+        <header>
+            <a href="#" id="logo">
+                <span>Property</span>
+                <span>Pro</span>
+                <span>Lite</span>
+            </a>
+
+            
+            <div class="dropdown right">
+                <img id="myBtn" class="dropbtn" src="../assets/images/menu.svg" alt="">
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="../agent/">Agent</a>
+                    <a href="../">Sign Out</a>
+                </div>
+            </div>
+        </header>
+        <main class="container">
+            <div class="card-ad">
+                <div class="slider">
+                    <div class="slideshow-container">
+                            <div class="mySlides fade">
+                              <div class="numbertext">1 / 3</div>
+                              <img src="../assets/images/home1.jpg" id="slide-image">
+                            </div>
+                          
+                            <div class="mySlides fade">
+                              <div class="numbertext">2 / 3</div>
+                              <img src="../assets/images/home2.jpeg" id="slide-image" >
+                            </div>
+                          
+                            <div class="mySlides fade">
+                              <div class="numbertext">3 / 3</div>
+                              <img src="../assets/images/home3.jpg" id="slide-image" >
+                            </div>
+                          
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                          </div>
+                          <br>
+                          
+                          <div style="text-align:center">
+                            <span class="dot" onclick="currentSlide(1)"></span> 
+                            <span class="dot" onclick="currentSlide(2)"></span> 
+                            <span class="dot" onclick="currentSlide(3)"></span> 
+                          </div>
+                </div>
+                <div class="ad-details">
+                    <p><span class="key">property type:</span><span class="value">1 bedroom apartment</span></p>
+                    <p><span class="key">status:</span><span class="value">available</span></p>
+                    <p><span class="key">price:</span><span class="value"> $120,00000</span></p>
+                    <p><span class="key">city:</span><span class="value">Nairobi CBD</span></p>
+                    <p><span class="key">state:</span><span class="value">Nairobi</span> </p>
+                    <p><span class="key">address:</span><span class="value"> Upperhill, street 3</span></p>
+
+                    <div id="contact">
+                        <i class="contact"><img class="icon" src="../assets/images/message.png" alt="">contact</i>
+                        <i class="right contact"><img class="icon" src="../assets/images/flag.png" alt="">report</i>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p> &copy; <span id="current-date"></span>, <a href="https://www.bonbo.io.ke">Bonvic</a>  </p>
+        </footer>
+        <script src="../assets/scripts/main.js" async defer></script>
+    </body>
+</html>
