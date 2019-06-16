@@ -243,7 +243,46 @@ nav li a:hover
     display: block;
   }
   
+/****search***/
+.search 
+{
+  width: 100%;
+  position: relative;
+  display: inline-flex;
+}
+.type
+{
+  width: 100%;
+  height: 36px;
+  border: 3px solid #00B4CC;
+  border-radius: 5px 0 0 5px;
+  color: #00B4CC;
+  font-weight: 600;
+}
+.searchTerm:focus
+{
+  color: #00B4CC;
+}
 
+.searchButton 
+{
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+.search-box
+{
+  width: 30%;
+  position: relative;
+  margin: 20px auto;
+  transform: translate(-50%, -50%);
+}
 
 /* landing picture */
 .landing
@@ -771,7 +810,8 @@ footer p
 }
 
 /****media queries ***/
-@media only screen and (max-width : 740px) {
+@media only screen and (max-width : 740px) 
+{
     a#logo
     {
         font-size: 20px;
@@ -781,23 +821,34 @@ footer p
     {
         font-size: 10px;
     }
+    .search-box{
+      width: 100%;
+      left: 60%;
+    }
+    .type
+    {
+      width: 60%;
+    }
     #login-form-wrap 
     {
         width: 85%;
     }
-    input {
+    input 
+    {
         width: 100%;
         height: 40px;
         line-height: 50px;
     }
-    #login-form {
+    #login-form 
+    {
         padding: 0 40px;
     }
     #email, #password, #fname, #lname, #phoneNumber, #address 
     {
     font-size: 14px;
     }
-    .dropdown {
+    .dropdown 
+    {
         margin: 10px 70px;
     }
     .card-ad
