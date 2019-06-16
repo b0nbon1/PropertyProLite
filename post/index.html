@@ -33,7 +33,36 @@
 </header>
 
 <main class="container">
-
+        <div id="login-form-wrap">
+                <h2 class="header-form">Create new Property</h2>
+                <form id="login-form" action="./home/">
+                    <p>
+                        <input type="text" class="input" id="status" name="status" placeholder="Status" required><i class="validation"><span></span><span></span></i>
+                    </p>
+                    <p>
+                        <input type="decimal" class="input" id="price" name="price" placeholder="Price" required><i class="validation"><span></span><span></span></i>
+                    </p>
+                    <p>
+                        <input type="text" class="input" id="state" name="state" placeholder="state" required><i class="validation"><span></span><span></span></i>
+                    </p>
+                    <p>
+                        <input type="text" class="input" id="city" name="city" placeholder="City" required><i class="validation"><span></span><span></span></i>
+                    </p>
+                    <p>
+                        <input type="text" class="input" id="address" name="address" placeholder="Address" required><i class="validation"><span></span><span></span></i>
+                    </p>
+                    <p>
+                    <input type="Text" class="input" id="type" name="type" placeholder="Type" required><i class="validation"><span></span><span></span></i>
+                    </p>
+                    <p class="upload-btn-wrapper">
+                            <button class="btn-upload">Upload a file</button>
+                            <input type="file" name="myfile" />
+                    </p>
+                    <p>
+                    <input type="submit" id="submit" value="post">
+                    </p>
+                </form>
+                </div>
 </main>
 <footer>
     <p> &copy; <span id="current-date"></span>, <a href="https://www.bonbo.io.ke">Bonvic</a>  </p>
