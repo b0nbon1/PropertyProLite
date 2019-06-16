@@ -191,10 +191,9 @@ header {
 
 
 nav {
-
-	position: fixed;
-	padding: 20px;	
-
+  display: inline;
+	position: relative;
+	padding: 20px;
 }
 
 nav li {
@@ -733,7 +732,7 @@ main.container
     border-radius: 4px;
   }
   
-  #email, #password, #fname, #lname, #phoneNumber, #address 
+  .input 
   {
     width: 100%;
     padding: 0 0 0 10px;
@@ -749,21 +748,33 @@ main.container
     display: inline-block;
     background: none;
   }
-  #email:focus,
-  #password:focus {
+  .input:focus
+  {
     border-color: #3ca9e2;
   }
-  #email:focus:invalid,
-  #password:focus:invalid {
+  .input:focus:invalid,
+  .input:focus:invalid {
     color: #cc1e2b;
     border-color: #cc1e2b;
   }
-  #email:valid ~ .validation,
-  #password:valid ~ .validation {
+  .input:valid ~ .validation,
+  .input:valid ~ .validation {
     display: block;
     border-color: #0C0;
   }
-  
+  .upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  .upload-btn-wrapper input[type=file] 
+  {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
   #submit {
     border: none;
     display: block;
@@ -778,6 +789,7 @@ main.container
     display: inline-block;
     cursor: pointer;
     text-align: center;
+    margin-bottom: 10px;
   }
   #submit:hover {
     background-color: #329dd5;
@@ -861,6 +873,15 @@ main.container
   .btn-danger:hover {
     background: #c0392b;
     color: #ffffff;
+  }
+  .btn-upload {
+    border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
   }
 /**** footer ***/
 footer.footer
