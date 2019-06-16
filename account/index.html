@@ -56,7 +56,32 @@
                         <p><span class="key">property type:</span><span class="value">1 bedroom apartment</span></p>
                         <p><span class="key">status:</span><button class="btn btn-primary btn-round-2">Avalaible</button><button class="btn btn-danger btn-round-2">Sold</button></p>
                         <p><span class="key">price:</span><span class="value"> $120,00000</span></p>
-                        <p><button class="btn btn-success">Update</button><button class="btn btn-danger right">Delete</button></p>
+                        <p><button onclick="accordion('update')" class="btn btn-success">Update</button><button class="btn btn-danger right">Delete</button></p>
+                        <div id="update" class="hide">
+                            <form id="login-form" action="./home/">
+                                <p>
+                                    <input type="decimal" class="input" id="price" name="price" placeholder="Price" required><i class="validation"><span></span><span></span></i>
+                                </p>
+                                <p>
+                                    <input type="text" class="input" id="state" name="state" placeholder="state" required><i class="validation"><span></span><span></span></i>
+                                </p>
+                                <p>
+                                    <input type="text" class="input" id="city" name="city" placeholder="City" required><i class="validation"><span></span><span></span></i>
+                                </p>
+                                <p>
+                                    <input type="text" class="input" id="address" name="address" placeholder="Address" required><i class="validation"><span></span><span></span></i>
+                                </p>
+                                <p>
+                                <input type="Text" class="input" id="type" name="type" placeholder="Type" required><i class="validation"><span></span><span></span></i>
+                                </p>
+                                <p class="upload-btn-wrapper">
+                                        <button class="btn-upload">Upload a file</button>
+                                        <input type="file" name="myfile" />
+                                </p>
+                                <p>
+                                <input type="submit" id="submit" value="update">
+                                </p>
+                        </div>
                 </div>
             </div>
             
@@ -68,6 +93,32 @@
                             <p><span class="key">property type:</span><span class="value">1 bedroom apartment</span></p>
                             <p><span class="key">status:</span><button class="btn btn-primary btn-round-2">Avalaible</button><button class="btn btn-danger btn-round-2">Sold</button></p>
                             <p><span class="key">price:</span><span class="value"> $120,00000</span></p>
+                            <p><button onclick="accordion('update')" class="btn btn-success">Update</button><button class="btn btn-danger right">Delete</button></p>
+                        <div id="update" class="hide">
+                            <form id="login-form" action="./home/">
+                                <p>
+                                    <input type="decimal" class="input" id="price" name="price" placeholder="Price" required><i class="validation"><span></span><span></span></i>
+                                </p>
+                                <p>
+                                    <input type="text" class="input" id="state" name="state" placeholder="state" required><i class="validation"><span></span><span></span></i>
+                                </p>
+                                <p>
+                                    <input type="text" class="input" id="city" name="city" placeholder="City" required><i class="validation"><span></span><span></span></i>
+                                </p>
+                                <p>
+                                    <input type="text" class="input" id="address" name="address" placeholder="Address" required><i class="validation"><span></span><span></span></i>
+                                </p>
+                                <p>
+                                <input type="Text" class="input" id="type" name="type" placeholder="Type" required><i class="validation"><span></span><span></span></i>
+                                </p>
+                                <p class="upload-btn-wrapper">
+                                        <button class="btn-upload">Upload a file</button>
+                                        <input type="file" name="myfile" />
+                                </p>
+                                <p>
+                                <input type="submit" id="submit" value="update">
+                                </p>
+                        </div>
                     </div>
                 </div>
                 <div class="wrapper border-1">
@@ -78,6 +129,32 @@
                                 <p><span class="key">property type:</span><span class="value">1 bedroom apartment</span></p>
                                 <p><span class="key">status:</span><button class="btn btn-primary btn-round-2">Avalaible</button><button class="btn btn-danger btn-round-2">Sold</button></p>
                                 <p><span class="key">price:</span><span class="value"> $120,00000</span></p>
+                                <p><button onclick="accordion('update')" class="btn btn-success">Update</button><button class="btn btn-danger right">Delete</button></p>
+                        <div id="update" class="hide">
+                            <form id="login-form" action="./home/">
+                                <p>
+                                    <input type="decimal" class="input" id="price" name="price" placeholder="Price" required><i class="validation"><span></span><span></span></i>
+                                </p>
+                                <p>
+                                    <input type="text" class="input" id="state" name="state" placeholder="state" required><i class="validation"><span></span><span></span></i>
+                                </p>
+                                <p>
+                                    <input type="text" class="input" id="city" name="city" placeholder="City" required><i class="validation"><span></span><span></span></i>
+                                </p>
+                                <p>
+                                    <input type="text" class="input" id="address" name="address" placeholder="Address" required><i class="validation"><span></span><span></span></i>
+                                </p>
+                                <p>
+                                <input type="Text" class="input" id="type" name="type" placeholder="Type" required><i class="validation"><span></span><span></span></i>
+                                </p>
+                                <p class="upload-btn-wrapper">
+                                        <button class="btn-upload">Upload a file</button>
+                                        <input type="file" name="myfile" />
+                                </p>
+                                <p>
+                                <input type="submit" id="submit" value="update">
+                                </p>
+                        </div>
                         </div>
                     </div>
           </article>
@@ -89,5 +166,15 @@
     <p> &copy; <span id="current-date"></span>, <a href="https://www.bonbo.io.ke">Bonvic</a>  </p>
 </footer>
         <script src="../assets/scripts/main.js"></script>
+        <script>
+        function accordion(id) {
+            var x = document.getElementById(id);
+            if (x.className.indexOf("show") == -1) {
+            x.className += " show";
+            } else { 
+            x.className = x.className.replace(" show", "");
+            }
+            }
+        </script>
     </body>
 </html>
