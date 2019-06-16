@@ -874,6 +874,14 @@ main.container
     background: #c0392b;
     color: #ffffff;
   }
+  .btn-success {
+    background: #2ecc71;
+    color: #ffffff;
+  }
+  .btn-success:hover {
+    background: #27ae60;
+    color: #ffffff;
+  }
   .btn-upload {
     border: 2px solid gray;
     color: gray;
@@ -960,4 +968,10 @@ footer p
   {
     min-width: 70px;
   }
+}
+.hide{
+  display: none;
+}
+.show{
+  display: block;
 }
