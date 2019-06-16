@@ -43,6 +43,11 @@ table
     border-collapse:collapse;
      border-spacing:0;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 /** end resets**/
 
 /**** preloader **/
@@ -357,8 +362,8 @@ nav li a:hover
 {
   font-weight: 800;
   position: absolute;
-  height:90px;
-  width: 60px;
+  height:70px;
+  width: 100px;
   bottom: 0;
   left: 0px;
   background-color: rgba(230, 230, 230, 0.692);
@@ -406,6 +411,13 @@ nav li a:hover
   border-radius: 5px;
 	box-shadow: 10px 10px 40px rgba(0,0,0,.5);
   overflow: hidden;
+}
+.border-1
+{
+  border: rgb(240, 238, 238) 1px solid;
+  border-radius: 5px;
+	box-shadow: 10px 10px 40px rgba(0,0,0,.5);
+  overflow: hidden;  
 }
 /* Slideshow container */
 .slider
@@ -551,6 +563,52 @@ main.container
 {
     margin-top: 6rem;
 }
+/*************/
+.wrapper {
+  display: flex;  
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+.main {
+  text-align: left;
+  /* background: deepskyblue; */
+}
+
+.aside-2 {
+  /* background-color: #0C0; */
+}
+.aside img
+{
+  height:200px;
+  max-width: 200px;
+}
+.avatar
+{
+  width: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 20px auto;
+
+}
+
+@media all and (min-width: 600px) {
+  .aside { flex: 2 0 0; }
+}
+
+@media all and (min-width: 800px) {
+  .main    { flex: 3 0px; }
+  .main    { order: 2; }
+  .aside-2 { order: 4; }
+}
+/******************/
 .bg
 {
     background-blend-mode: screen;
@@ -699,6 +757,12 @@ main.container
   }
 
 /**** footer ***/
+footer.footer
+{
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+}
 footer p 
 {
     font-size: 1rem;
