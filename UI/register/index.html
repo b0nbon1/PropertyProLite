@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Property Pro Lite</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../assets/css/main.css">
+    </head>
+    <body class="bg">
+        <div id="preloader">
+                <span class="window"></span>
+                <span class="window"></span>
+                <span class="window"></span>
+                <span class="window"></span>
+        </div>
+        <header>
+                <a href="../" id="logo">
+                    <span>Property</span>
+                    <span>Pro</span>
+                    <span>Lite</span>
+                </a>
+
+            </header>
+            <main class="container">
+                <div id="login-form-wrap">
+                        <h2 class="header-form">Register</h2>
+                        <form id="login-form" action="./home/">
+                            <p>
+                                <input type="text" class="input" id="fname" name="fname" placeholder="First Name" required><i class="validation"><span></span><span></span></i>
+                            </p>
+                            <p>
+                                <input type="text" class="input" id="lname" name="lname" placeholder="Last Name" required><i class="validation"><span></span><span></span></i>
+                            </p>
+                            <p>
+                                <input type="tel" class="input"  id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required><i class="validation"><span></span><span></span></i>
+                            </p>
+                            <p>
+                                <input type="text" class="input" id="address" name="address" placeholder="Address" required><i class="validation"><span></span><span></span></i>
+                            </p>
+                            <p>
+                            <input type="email" class="input" id="email" name="email" placeholder="email" required><i class="validation"><span></span><span></span></i>
+                            </p>
+                            <p>
+                            <input type="password" class="input" id="password" name="password" placeholder="password" required><i class="validation"><span></span><span></span></i>
+                            </p>
+                            <p>
+                            <input type="submit" id="submit" value="register">
+                            </p>
+                        </form>
+                        <div id="create-account-wrap">
+                        <p>Already have an account? <a style="cursor: pointer" id="btn-login">Log in</a><p>
+                        </div>
+                        </div>
+            </main>
+            <div id="login-modal" class="login-modal">
+                <div class="modal-content">
+                    <span class="closeBtn" id="closeBtn">&times;</span>
+                        <h2 class="header-form">Login</h2>
+                        <form id="login-form" action="./home/">
+                            <p>
+                            <input type="email" class="input" id="email" name="email" placeholder="email" required><i class="validation"><span></span><span></span></i>
+                            </p>
+                            <p>
+                            <input type="password" class="input" id="password" name="password" placeholder="password" required><i class="validation"><span></span><span></span></i>
+                            </p>
+                            <p>
+                            <input type="submit" id="submit" value="Login">
+                            </p>
+                        </form>
+                        <div id="create-account-wrap">
+                            <p>Forgot your password? <a href="../reset/">Reset password</a><p>
+                        </div>
+                </div>
+            </div>
+            <footer>
+                <p> &copy; <span id="current-date"></span>, <a href="https://www.bonbo.io.ke">Bonvic</a>  </p>
+            </footer>
+        <script src="../assets/scripts/main.js" async defer></script>
+    </body>
+</html>
