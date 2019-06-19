@@ -5,7 +5,7 @@ Property Pro Lite is a platform where people can create and/or search properties
 
 ## Hosted on github pages
 
-* [landing page](https://b0nbon1.github.io/PropertyProLite/UI). This page acts as the landing page.
+* [landing page](https://b0nbon1.github.io/PropertyProLite/UI/). This page acts as the landing page.
 * [adverts page](https://b0nbon1.github.io/PropertyProLite/UI/home/). All adverts are on this page.
 * [advert details page](https://b0nbon1.github.io/PropertyProLite/UI/advert). This page shows details about a single advert.
 * [User profile page](https://b0nbon1.github.io/PropertyProLite/UI/account). User's page showing their information and activity on the platform.
