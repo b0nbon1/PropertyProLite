@@ -358,14 +358,14 @@ nav li a:hover
 {
 	margin: 20px auto 100px;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	grid-gap: 10px;
 }
 .advert .card
 {
 	position: relative;
-	width: 350px;
-    margin: 20px auto;
+	width: 250px;
+    margin: 20px 40px;
     transition: transform .5s; 
 	background: rgb(250, 248, 248);
 	padding: 0px;
@@ -374,12 +374,12 @@ nav li a:hover
   border: rgb(240, 238, 238) 1px solid;
   border-radius: 5px;
   height: 300px;
-	box-shadow: 0 10px 40px rgba(0,0,0,.5);
+	box-shadow: 0 5px 20px rgba(0,0,0,.2);
 	overflow: hidden;
 }
 .advert .card:hover
 {
-    transform: scale(1.2);
+    transform: scale(1.05);
 }
 /* styling the adverts boxes */
 
