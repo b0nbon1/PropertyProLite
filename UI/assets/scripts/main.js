@@ -1,11 +1,17 @@
-/* preloader */
-window.addEventListener("load", function(){
-    var preloader = this.document.getElementById("preloader");
-    this.document.body.removeChild(preloader);
-});
+/********modal functions */
+function openModal(){
+  modal.style.display = 'block';
+}
 
+function closeModal(){
+  modal.style.display = 'none';
+}
 
-
+function clickOutside(e){
+  if(e.target == modal){
+  modal.style.display = 'none';
+  }
+}
 /* modal login form */
 var modal = document.getElementById('login-modal');
 if ( modal != null){
@@ -14,19 +20,6 @@ var closeBtn = document.getElementById('closeBtn');
 modalBtn.addEventListener('click', openModal);
 closeBtn.addEventListener('click', closeModal);
 window.addEventListener('click',clickOutside);
-function openModal(){
-    modal.style.display = 'block';
-}
-
-function closeModal(){
-    modal.style.display = 'none';
-}
-
-function clickOutside(e){
-    if(e.target == modal){
-    modal.style.display = 'none';
-    }
-}
 }
 /*******dropdown menu *******/
 var myBtn = document.getElementById("myBtn")
@@ -49,6 +42,21 @@ window.onclick = function(event) {
     }
   }
 }
+}
+/*********popout login modal*****/
+var pop = document.getElementById("popout")
+if (pop != null){
+pop.onclick = function (e) {
+  e.preventDefault;
+  window.location.href = "../index.html#login-modal";
+};
+}
+if(window.location.hash) {
+  if (window.location.hash.substring(1) === 'login-modal') {
+    openModal();
+    closeBtn.addEventListener('click', closeModal);
+    window.addEventListener('click',clickOutside);
+  }
 }
 
 /*footer date */
