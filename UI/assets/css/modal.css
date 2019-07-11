@@ -39,7 +39,9 @@
     text-decoration: none;
     cursor: pointer;
 }
-
+#popout {
+    cursor: pointer;
+}
 @keyframes modelopen{
     from{opacity: 0;}
     to {opacity: 1;}
