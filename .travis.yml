@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - stable
+git:
+  depth:       3
+cache: npm
+install: npm install
+directories:
+  - node_modules
+before_script:
+  - psql -c "CREATE DATABASE test_property_pro;" -U postgres
+  - psql -c "CREATE USER bon WITH PASSWORD 'bonbon123';" -U postgres
+script:
+  - npm run test
+after_success:
+  - npm run coveralls
+notifications:
+  email:       false
