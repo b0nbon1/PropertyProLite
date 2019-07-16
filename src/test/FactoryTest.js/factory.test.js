@@ -32,7 +32,7 @@ describe('Extra Routes', () => {
     });
     it('should check Wrong methods', (done) => {
         chai.request(app)
-            .patch('/api/v2/auth/signup')
+            .patch('/api/v2/auth/login')
             .end((err, res) => {
                 res.should.have.status(405);
                 res.body.should.be.a('object');
