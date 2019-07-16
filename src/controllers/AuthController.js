@@ -50,7 +50,8 @@ export default class Authentication {
                 // eslint-disable-next-line no-shadow
                 const { id, email } = checkUser.result;
                 const token = await Token.newToken({ email, id });
-                return Res.handleSuccess(200, 'successfully logged in', token, res);
+                const data = { token };
+                return Res.handleSuccess(200, 'successfully logged in', data, res);
             }
             return Res.handleError(401, 'wrong password!', res);
         } catch (err) {
