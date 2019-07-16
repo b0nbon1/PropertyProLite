@@ -15,6 +15,7 @@ class DBInit extends Queries {
             conn = await this.pool.connect();
             if (data.length) {
                 const res = await conn.query(sql, data);
+                // console.log(res);
                 conn.release();
                 return res;
             }
@@ -29,6 +30,8 @@ class DBInit extends Queries {
     async initDb() {
         try {
             await this.query(this.tableUsers);
+            await this.query(this.tableProperty);
+            await this.query(this.tableFlag);
         } catch (error) {
             return error.toString();
         }
@@ -36,7 +39,6 @@ class DBInit extends Queries {
 
     async dropTables() {
         await this.query(this.dropUsers);
-        console.log('Drop db, disconnected');
     }
 }
 

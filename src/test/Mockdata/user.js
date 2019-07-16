@@ -2,7 +2,7 @@ const User = {
     user1: {
         firstname: 'bonbon',
         lastname: 'vic',
-        email: 'bobonn@test.com',
+        email: 'bobon@test.com',
         phoneNumber: '+254742087558',
         address: 'kenya',
         password: 'f5e4xhr43dh4t',

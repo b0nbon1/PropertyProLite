@@ -48,4 +48,24 @@ export default class Validations {
             return Res.handleError(500, error.toString(), res);
         }
     }
+
+    static async property(req, res, next) {
+        try {
+            const {
+                price, state, city, address, type,
+            } = req.body;
+            if (!price || !state || !city || !address || !type) {
+                return Res.handleError(400, 'Please fill all the fields', res);
+            }
+            if (await Regex.floatCheck(price)) return Res.handleError(400, 'Price should be a positive float', res);
+            if (await Regex.nameCheck(state)) return Res.handleError(400, 'Please enter valid State', res);
+            if (await Regex.nameCheck(city)) return Res.handleError(400, 'Please enter valid city', res);
+            if (await Regex.addressCheck(address)) return Res.handleError(400, 'Please enter a valid address of property', res);
+            if (await Regex.typeCheck(type)) return Res.handleError(400, 'Please enter a valid type of property', res);
+            res.locals.price = Number(parseFloat(price)).toFixed(2);
+            next();
+        } catch (error) {
+            return Res.handleError(500, error.toString(), res);
+        }
+    }
 }
