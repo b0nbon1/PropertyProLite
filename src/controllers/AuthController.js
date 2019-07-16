@@ -37,4 +37,24 @@ export default class Authentication {
             return Res.handleError(500, err.toString(), res);
         }
     }
+
+    static async loginUser(req, res) {
+        try {
+            const {
+                email,
+                password,
+            } = req.body;
+            const checkUser = new User(email);
+            await checkUser.login();
+            if (await Encrypt.check(password, checkUser.result.password)) {
+                // eslint-disable-next-line no-shadow
+                const { id, email } = checkUser.result;
+                const token = await Token.newToken({ email, id });
+                return Res.handleSuccess(200, 'successfully logged in', token, res);
+            }
+            return Res.handleError(401, 'wrong password!', res);
+        } catch (err) {
+            return Res.handleError(500, err.toString(), res);
+        }
+    }
 }
