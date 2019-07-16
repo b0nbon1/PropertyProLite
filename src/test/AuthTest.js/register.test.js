@@ -1,11 +1,32 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
+import '@babel/polyfill';
 import app from '../../../app';
 import data from '../Mockdata/user';
+import Db from '../../database';
 
 chai.use(chaiHttp);
 chai.should();
 describe('Register', () => {
+    before('Create tables', async () => {
+        await Db.dropTables();
+        await Db.initDb();
+        console.log('/***********testing********/');
+    });
+    before('signup user', () => (done) => {
+        chai.request(app)
+            .post('/api/v1/auth/signup')
+            .send(data.user13)
+            .end((err) => {
+                if (err) return done();
+                done();
+            });
+    });
+    after('RollBack all the tables', (done) => {
+        Db.dropTables();
+        done();
+        console.log('successful drop');
+    });
     it('should register new user successfully', (done) => {
         chai.request(app)
             .post('/api/v1/auth/signup')
@@ -154,7 +175,7 @@ describe('Register', () => {
     it('should check if user email exists', (done) => {
         chai.request(app)
             .post('/api/v1/auth/signup')
-            .send(data.user13)
+            .send(data.user1)
             .end((err, res) => {
                 res.should.have.status(409);
                 res.body.should.be.a('object');
