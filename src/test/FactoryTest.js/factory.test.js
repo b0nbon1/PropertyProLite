@@ -23,20 +23,20 @@ describe('Extra Routes', () => {
         chai.request(app)
             .get('/api/v1/ty467ft')
             .end((err, res) => {
-                res.should.have.status(405);
+                res.should.have.status(404);
                 res.body.should.be.a('object');
-                res.body.message.should.equal('Invalid route or Method');
+                res.body.error.should.equal('Invalid route');
                 if (err) return done();
                 done();
             });
     });
     it('should check Wrong methods', (done) => {
         chai.request(app)
-            .patch('/api/v1/property')
+            .patch('/api/v2/auth/signup')
             .end((err, res) => {
                 res.should.have.status(405);
                 res.body.should.be.a('object');
-                res.body.message.should.equal('Invalid route or Method');
+                res.body.error.should.equal('Invalid Method');
                 if (err) return done();
                 done();
             });
