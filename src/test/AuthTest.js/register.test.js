@@ -45,7 +45,7 @@ describe('Register', () => {
             .end((err, res) => {
                 res.should.have.status(400);
                 res.body.should.be.a('object');
-                res.body.message.should.equal('Please fill all the fields');
+                res.body.error.should.equal('Please fill all the fields');
                 if (err) return done();
                 done();
             });
@@ -57,7 +57,7 @@ describe('Register', () => {
             .end((err, res) => {
                 res.should.have.status(400);
                 res.body.should.be.a('object');
-                res.body.message.should.equal('Please fill all the fields');
+                res.body.error.should.equal('Please fill all the fields');
                 if (err) return done();
                 done();
             });
@@ -69,7 +69,7 @@ describe('Register', () => {
             .end((err, res) => {
                 res.should.have.status(400);
                 res.body.should.be.a('object');
-                res.body.message.should.equal('Please fill all the fields');
+                res.body.error.should.equal('Please fill all the fields');
                 if (err) return done();
                 done();
             });
@@ -81,7 +81,7 @@ describe('Register', () => {
             .end((err, res) => {
                 res.should.have.status(400);
                 res.body.should.be.a('object');
-                res.body.message.should.equal('Please fill all the fields');
+                res.body.error.should.equal('Please fill all the fields');
                 if (err) return done();
                 done();
             });
@@ -93,7 +93,7 @@ describe('Register', () => {
             .end((err, res) => {
                 res.should.have.status(400);
                 res.body.should.be.a('object');
-                res.body.message.should.equal('Please fill all the fields');
+                res.body.error.should.equal('Please fill all the fields');
                 if (err) return done();
                 done();
             });
@@ -105,7 +105,7 @@ describe('Register', () => {
             .end((err, res) => {
                 res.should.have.status(400);
                 res.body.should.be.a('object');
-                res.body.message.should.equal('Enter valid phone Number');
+                res.body.error.should.equal('Enter valid phone Number');
                 if (err) return done();
                 done();
             });
@@ -117,7 +117,7 @@ describe('Register', () => {
             .end((err, res) => {
                 res.should.have.status(400);
                 res.body.should.be.a('object');
-                res.body.message.should.equal('Please fill all the fields');
+                res.body.error.should.equal('Please fill all the fields');
                 if (err) return done();
                 done();
             });
@@ -129,7 +129,7 @@ describe('Register', () => {
             .end((err, res) => {
                 res.should.have.status(400);
                 res.body.should.be.a('object');
-                res.body.message.should.equal('enter valid password. should be 6 character and more and contain letters and numbers');
+                res.body.error.should.equal('enter valid password. should be 6 character and more and contain letters and numbers');
                 if (err) return done();
                 done();
             });
@@ -141,7 +141,7 @@ describe('Register', () => {
             .end((err, res) => {
                 res.should.have.status(400);
                 res.body.should.be.a('object');
-                res.body.message.should.equal('enter valid firstname');
+                res.body.error.should.equal('enter valid firstname');
                 if (err) return done();
                 done();
             });
@@ -153,7 +153,7 @@ describe('Register', () => {
             .end((err, res) => {
                 res.should.have.status(400);
                 res.body.should.be.a('object');
-                res.body.message.should.equal('enter valid lastname');
+                res.body.error.should.equal('enter valid lastname');
                 if (err) return done();
                 done();
             });
@@ -165,7 +165,7 @@ describe('Register', () => {
             .end((err, res) => {
                 res.should.have.status(400);
                 res.body.should.be.a('object');
-                res.body.message.should.equal('enter valid email e.g user@gmail.com');
+                res.body.error.should.equal('enter valid email e.g user@gmail.com');
                 if (err) return done();
                 done();
             });
@@ -177,7 +177,7 @@ describe('Register', () => {
             .end((err, res) => {
                 res.should.have.status(409);
                 res.body.should.be.a('object');
-                res.body.message.should.equal('email account exists');
+                res.body.error.should.equal('email account exists');
                 if (err) return done();
                 done();
             });
