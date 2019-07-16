@@ -7,10 +7,10 @@ export default class Responses {
         });
     }
 
-    static handleError(statusCode, message, res) {
+    static handleError(statusCode, error, res) {
         res.status(statusCode).json({
             status: statusCode,
-            message,
+            error,
         });
     }
 }

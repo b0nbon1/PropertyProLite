@@ -11,7 +11,6 @@ describe('Register', () => {
     before('Create tables', async () => {
         await Db.dropTables();
         await Db.initDb();
-        console.log('/***********testing********/');
     });
     before('signup user', () => (done) => {
         chai.request(app)
@@ -25,7 +24,6 @@ describe('Register', () => {
     after('RollBack all the tables', (done) => {
         Db.dropTables();
         done();
-        console.log('successful drop');
     });
     it('should register new user successfully', (done) => {
         chai.request(app)

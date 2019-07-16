@@ -11,7 +11,6 @@ class DBInit extends Queries {
     async query(sql, data = []) {
         try {
             const conn = await this.client.connect();
-            console.log('Connected successfully');
             if (data.length) {
                 const res = await conn.query(sql, data);
                 return res;
@@ -19,7 +18,6 @@ class DBInit extends Queries {
             const result = await conn.query(sql);
             return result;
         } catch (err) {
-            console.log(err);
             return err.toString();
         }
     }
@@ -28,7 +26,6 @@ class DBInit extends Queries {
         try {
             await this.query(this.tableUsers);
         } catch (error) {
-            console.log(error);
             return error.toString();
         }
     }
