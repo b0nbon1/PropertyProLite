@@ -2,7 +2,7 @@ const User = {
     user1: {
         firstname: 'bonbon',
         lastname: 'vic',
-        email: 'bonbo@test.com',
+        email: 'bobonn@test.com',
         phoneNumber: '+254742087558',
         address: 'kenya',
         password: 'f5e4xhr43dh4t',
@@ -98,7 +98,7 @@ const User = {
     user13: {
         firstname: 'bonbon',
         lastname: 'vic',
-        email: 'bonbo@test.com',
+        email: 'bobo@test.com',
         phoneNumber: '+254742087558',
         address: 'kenya',
         password: 'ftdtfr5e4x4t',
