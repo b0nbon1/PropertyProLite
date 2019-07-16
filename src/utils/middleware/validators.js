@@ -29,4 +29,23 @@ export default class Validations {
             return Res.handleError(500, error.toString(), res);
         }
     }
+
+    static async login(req, res, next) {
+        try {
+            const {
+                email,
+                password,
+            } = req.body;
+            if (!email || !password) {
+                return Res.handleError(400, 'Please fill all the fields', res);
+            }
+            if (await Regex.passCheck(password)) return Res.handleError(400, 'enter valid password. should be 6 character and more and contain letters and numbers', res);
+            if (await Regex.emailCheck(email)) return Res.handleError(400, 'enter valid email e.g user@gmail.com', res);
+            const user = await User.getUser(email);
+            if (await user.length === 0) return Res.handleError(404, 'User is not registered. Sign up to create account', res);
+            next();
+        } catch (error) {
+            return Res.handleError(500, error.toString(), res);
+        }
+    }
 }

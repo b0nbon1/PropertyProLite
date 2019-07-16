@@ -7,23 +7,10 @@ import Db from '../../database';
 
 chai.use(chaiHttp);
 chai.should();
+
 describe('Register', () => {
-    before('Create tables', async () => {
-        await Db.dropTables();
+    it('Create tables', async () => {
         await Db.initDb();
-    });
-    before('signup user', () => (done) => {
-        chai.request(app)
-            .post('/api/v2/auth/signup')
-            .send(data.user13)
-            .end((err) => {
-                if (err) return done();
-                done();
-            });
-    });
-    after('RollBack all the tables', (done) => {
-        Db.dropTables();
-        done();
     });
     it('should register new user successfully', (done) => {
         chai.request(app)
@@ -181,5 +168,8 @@ describe('Register', () => {
                 if (err) return done();
                 done();
             });
+    });
+    after('RollBack all the tables', async () => {
+        await Db.dropTables();
     });
 });

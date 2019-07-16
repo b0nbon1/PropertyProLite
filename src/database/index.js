@@ -2,20 +2,24 @@ import { Pool } from 'pg';
 import DBURL from '../../config';
 import Queries from './queries';
 
+let conn;
+
 class DBInit extends Queries {
     constructor() {
         super();
-        this.client = new Pool({ connectionString: DBURL });
+        this.pool = new Pool({ connectionString: DBURL });
     }
 
     async query(sql, data = []) {
         try {
-            const conn = await this.client.connect();
+            conn = await this.pool.connect();
             if (data.length) {
                 const res = await conn.query(sql, data);
+                conn.release();
                 return res;
             }
             const result = await conn.query(sql);
+            conn.release();
             return result;
         } catch (err) {
             return err.toString();
@@ -32,6 +36,7 @@ class DBInit extends Queries {
 
     async dropTables() {
         await this.query(this.dropUsers);
+        console.log('Drop db, disconnected');
     }
 }
 
