@@ -9,6 +9,12 @@ export default class Model {
     static async findOne(table, entity, value) {
         const sql = `SELECT * FROM ${table} WHERE ${entity}='${value}'`;
         const { rows } = await Db.query(sql);
-        return rows[0];
+        return rows;
+    }
+
+    static async findAll(table) {
+        const sql = `SELECT * FROM ${table}`;
+        const { rows } = await Db.query(sql);
+        return rows;
     }
 }
