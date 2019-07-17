@@ -1,6 +1,8 @@
-const checkEmpty = (obj) => {
-    // eslint-disable-next-line arrow-parens
-    Object.keys(obj).forEach((key) => (obj[key] === '' || obj[key] == null) && delete obj[key]);
-};
+const removeEmpty = obj =>
+    Object.fromEntries(
+        Object.entries(obj)
+            .filter(([a, b]) => b != null)
+            .map(([a, b]) => (typeof b === 'object' ? [a, removeEmpty(b)] : [a, b])),
+    );
 
-export default checkEmpty;
+export default removeEmpty;
