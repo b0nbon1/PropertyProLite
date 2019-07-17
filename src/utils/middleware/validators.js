@@ -102,4 +102,16 @@ export default class Validations {
         if (property.length === 0) return Res.handleError(404, 'No properties available', res);
         next();
     }
+
+    static async type(req, res, next) {
+        try {
+            const { type } = req.query;
+            if (!type) return Res.handleError(400, 'Please ensure there is query type made', res);
+            const check = await Model.findOne('properties', 'type', type);
+            if (check.length === 0) return Res.handleError(404, 'adverts with this type does not exists', res);
+            next();
+        } catch (err) {
+            return Res.handleError(500, err.toString(), res);
+        }
+    }
 }

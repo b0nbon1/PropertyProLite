@@ -49,4 +49,24 @@ export default class Property {
             return Res.handleError(500, err.toString(), res);
         }
     }
+
+    static async getOne(req, res) {
+        try {
+            const id = parseInt(req.params.property_id, 10);
+            const [property] = await Model.findOne('properties', 'id', id);
+            return Res.handleSuccess(200, 'got property successfully', property, res);
+        } catch (err) {
+            return Res.handleError(500, err.toString(), res);
+        }
+    }
+
+    static async specType(req, res) {
+        try {
+            const { type } = req.query;
+            const property = await Model.findOne('properties', 'type', type);
+            return Res.handleSuccess(200, 'got specific type Successful', property, res);
+        } catch (err) {
+            return Res.handleError(500, err.toString(), res);
+        }
+    }
 }
