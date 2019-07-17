@@ -8,5 +8,7 @@ const route = express.Router();
 
 route.use(fileupload({ useTempFiles: true }));
 route.post('/property', Validations.property, Token.userToken, Property.Post);
+route.patch('/property/:property_id', Token.userToken,
+    Validations.update, Validations.checkId, Validations.owner, Property.Update);
 
 export default route;
