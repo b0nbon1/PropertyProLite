@@ -21,7 +21,6 @@ export default class User extends Model {
     static async getUser(email) {
         const sql = `SELECT * FROM users WHERE email='${email}'`;
         const { rows } = await Db.query(sql);
-        // console.log(rows);
         return rows;
     }
 }

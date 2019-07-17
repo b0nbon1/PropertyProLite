@@ -32,6 +32,8 @@ export default class Queries {
             FOREIGN KEY (propertyId) REFERENCES users (id) ON DELETE CASCADE
           )`;
 
-        this.dropUsers = 'DROP TABLE IF EXISTS users';
+        this.dropUsers = 'DROP TABLE IF EXISTS users CASCADE';
+        this.dropProperty = 'DROP TABLE IF EXISTS properties CASCADE';
+        this.dropFlag = 'DROP TABLE IF EXISTS flags CASCADE';
     }
 }
