@@ -9,7 +9,7 @@ chai.use(chaiHttp);
 chai.should();
 
 describe('Register', () => {
-    it('Create tables', async () => {
+    before('Create tables', async () => {
         await Db.initDb();
     });
     it('should register new user successfully', (done) => {
@@ -168,8 +168,5 @@ describe('Register', () => {
                 if (err) return done();
                 done();
             });
-    });
-    after('RollBack all the tables', async () => {
-        await Db.dropTables();
     });
 });

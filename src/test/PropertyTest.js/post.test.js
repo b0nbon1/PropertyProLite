@@ -11,6 +11,8 @@ const wrongToken = '654gyujy5ygre';
 
 chai.use(chaiHttp);
 chai.should();
+
+
 before('generate token', () => {
     token = jwt.newToken({ email: 'testtest@tes.co', id: 1 });
 });
