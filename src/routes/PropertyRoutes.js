@@ -10,5 +10,6 @@ route.use(fileupload({ useTempFiles: true }));
 route.post('/property', Validations.property, Token.userToken, Property.Post);
 route.patch('/property/:property_id', Token.userToken,
     Validations.update, Validations.checkId, Validations.owner, Property.Update);
+route.get('/properties', Validations.getAll, Property.getAll);
 
 export default route;

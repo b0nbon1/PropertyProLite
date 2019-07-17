@@ -23,7 +23,7 @@ export default class Validations {
             if (await Regex.phoneCheck(phoneNumber)) return Res.handleError(400, 'Enter valid phone Number', res);
             if (await Regex.passCheck(password)) return Res.handleError(400, 'enter valid password. should be 6 character and more and contain letters and numbers', res);
             if (await Regex.emailCheck(email)) return Res.handleError(400, 'enter valid email e.g user@gmail.com', res);
-            const user = await Model.findOne('users', 'email', email);
+            const [user] = await Model.findOne('users', 'email', email);
             if (user) return Res.handleError(409, 'email account exists', res);
             next();
         } catch (error) {
@@ -42,7 +42,7 @@ export default class Validations {
             }
             if (await Regex.passCheck(password)) return Res.handleError(400, 'enter valid password. should be 6 character and more and contain letters and numbers', res);
             if (await Regex.emailCheck(email)) return Res.handleError(400, 'enter valid email e.g user@gmail.com', res);
-            const user = await Model.findOne('users', 'email', email);
+            const [user] = await Model.findOne('users', 'email', email);
             if (!user) return Res.handleError(404, 'User is not registered. Sign up to create account', res);
             next();
         } catch (error) {
@@ -91,8 +91,15 @@ export default class Validations {
 
     static async checkId(req, res, next) {
         res.locals.id = parseInt(req.params.property_id, 10);
-        // Advert.getProperty(res.locals.id);
-        if (!await Model.findOne('properties', 'id', res.locals.id)) return Res.handleError(404, 'Property with such id does not exists', res);
+        const [property] = await Model.findOne('properties', 'id', res.locals.id);
+        if (!property) return Res.handleError(404, 'Property with such id does not exists', res);
+        next();
+    }
+
+    static async getAll(req, res, next) {
+        const filter = 'status';
+        const property = await Model.findOne('properties', filter, 'available');
+        if (property.length === 0) return Res.handleError(404, 'No properties available', res);
         next();
     }
 }

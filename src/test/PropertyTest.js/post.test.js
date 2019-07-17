@@ -2,8 +2,8 @@
 /* eslint-disable one-var */
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import app from '../../../app';
 import jwt from '../../utils/helpers/jwt';
+import app from '../../../app';
 import data from '../Mockdata/property';
 
 let token;
