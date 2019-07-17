@@ -57,54 +57,15 @@ describe('Update advert', () => {
                 done();
             });
     });
-    it('should property should have a valid State', (done) => {
+    it('should property should have Valid price', (done) => {
         chai.request(app)
             .patch('/api/v2/property/1')
-            .send(data.property14)
+            .send()
             .set('authorization', `Bearer ${token}`)
             .end((err, res) => {
                 res.should.have.status(400);
                 res.body.should.be.a('object');
-                res.body.error.should.equal('Please enter valid State');
-                if (err) return done();
-                done();
-            });
-    });
-    it('should property should have a valid city name', (done) => {
-        chai.request(app)
-            .patch('/api/v2/property/1')
-            .send(data.property15)
-            .set('authorization', `Bearer ${token}`)
-            .end((err, res) => {
-                res.should.have.status(400);
-                res.body.should.be.a('object');
-                res.body.error.should.equal('Please enter valid city');
-                if (err) return done();
-                done();
-            });
-    });
-    it('should property should have a valid type that exists', (done) => {
-        chai.request(app)
-            .patch('/api/v2/property/1')
-            .send(data.property16)
-            .set('authorization', `Bearer ${token}`)
-            .end((err, res) => {
-                res.should.have.status(400);
-                res.body.should.be.a('object');
-                res.body.error.should.equal('Please enter a valid type of property');
-                if (err) return done();
-                done();
-            });
-    });
-    it('should property should have a valid address', (done) => {
-        chai.request(app)
-            .patch('/api/v2/property/1')
-            .send(data.property17)
-            .set('authorization', `Bearer ${token}`)
-            .end((err, res) => {
-                res.should.have.status(400);
-                res.body.should.be.a('object');
-                res.body.error.should.equal('Please enter a valid address of property');
+                res.body.error.should.equal('Please fill the fields');
                 if (err) return done();
                 done();
             });

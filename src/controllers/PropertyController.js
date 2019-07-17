@@ -29,12 +29,10 @@ export default class Property {
     static async Update(req, res) {
         try {
             const {
-                price, state, city, address, type, imageurl,
+                price,
             } = req.body;
             const id = parseInt(req.params.property_id, 10);
-            const newProperty = new PropertyModel({
-                id, price, state, city, address, type, imageurl,
-            });
+            const newProperty = new PropertyModel({ id, price });
             await newProperty.update();
             return Res.handleSuccess(200, 'successfully updated advert', newProperty.result, res);
         } catch (err) {
