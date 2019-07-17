@@ -39,6 +39,8 @@ class DBInit extends Queries {
 
     async dropTables() {
         await this.query(this.dropUsers);
+        await this.query(this.dropProperty);
+        await this.query(this.dropFlag);
     }
 }
 
