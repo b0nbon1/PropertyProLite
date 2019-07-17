@@ -11,5 +11,7 @@ route.post('/property', Validations.property, Token.userToken, Property.Post);
 route.patch('/property/:property_id', Token.userToken,
     Validations.update, Validations.checkId, Validations.owner, Property.Update);
 route.get('/properties', Validations.getAll, Property.getAll);
+route.get('/property', Validations.type, Property.specType);
+route.get('/property/:property_id', Validations.checkId, Property.getOne);
 
 export default route;
