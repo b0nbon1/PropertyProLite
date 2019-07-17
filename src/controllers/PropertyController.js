@@ -1,6 +1,7 @@
 
 import date from '../utils/helpers/dates';
 import PropertyModel from '../Models/PropertyModel';
+import Model from '../Models/Model';
 import Res from '../utils/helpers/responses';
 import upload from '../utils/helpers/upload';
 
@@ -35,6 +36,15 @@ export default class Property {
             const newProperty = new PropertyModel({ id, price });
             await newProperty.update();
             return Res.handleSuccess(200, 'successfully updated advert', newProperty.result, res);
+        } catch (err) {
+            return Res.handleError(500, err.toString(), res);
+        }
+    }
+
+    static async getAll(req, res) {
+        try {
+            const data = await Model.findAll('properties');
+            return Res.handleSuccess(200, 'got all properties successfully', data, res);
         } catch (err) {
             return Res.handleError(500, err.toString(), res);
         }
