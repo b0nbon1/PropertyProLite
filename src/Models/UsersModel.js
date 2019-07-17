@@ -14,13 +14,7 @@ export default class User extends Model {
 
     async login() {
         const user = this.payload;
-        const [obj] = await User.getUser(user);
+        const [obj] = await Model.findOne('users', 'email', user);
         this.result = obj;
-    }
-
-    static async getUser(email) {
-        const sql = `SELECT * FROM users WHERE email='${email}'`;
-        const { rows } = await Db.query(sql);
-        return rows;
     }
 }
