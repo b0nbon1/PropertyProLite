@@ -6,7 +6,7 @@ const env = process.env.NODE_ENV;
 const DB = {
     development: process.env.DBURL,
     test: process.env.DBURL_TEST,
-    production: process.env.DBURL_PROD,
+    production: process.env.DATABASE_URL,
 };
 
 export default DB[env];
