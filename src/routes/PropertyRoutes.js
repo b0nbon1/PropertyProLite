@@ -13,5 +13,6 @@ route.patch('/property/:property_id', Token.userToken,
 route.get('/properties', Validations.getAll, Property.getAll);
 route.get('/property', Validations.type, Property.specType);
 route.get('/property/:property_id', Validations.checkId, Property.getOne);
+route.patch('/property/:property_id/sold', Token.userToken, Validations.checkId, Validations.owner, Property.markSold);
 
 export default route;

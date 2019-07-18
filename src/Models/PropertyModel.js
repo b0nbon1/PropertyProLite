@@ -12,14 +12,6 @@ export default class Property extends Model {
         [this.result] = rows;
     }
 
-    async update() {
-        const property = this.payload;
-        const sql = `UPDATE properties SET price = $1 WHERE id = $2 RETURNING *`;
-        const values = [property.price, property.id];
-        const { rows } = await Db.query(sql, values);
-        [this.result] = rows;
-    }
-
     static async checkUser(id, user) {
         const [prop] = await this.findOne('properties', 'id', id);
         if (prop.owner === user) return true;
