@@ -12,10 +12,11 @@ export default class Property extends Model {
         [this.result] = rows;
     }
 
-    async update() {
+    async update(value) {
         const property = this.payload;
-        const sql = `UPDATE properties SET price = $1 WHERE id = $2 RETURNING *`;
-        const values = [property.price, property.id];
+        const sql = `UPDATE properties SET ${value} = $1 WHERE id = $2 RETURNING *`;
+        const key = Object.keys(this.payload)[1];
+        const values = [property[key], property.id];
         const { rows } = await Db.query(sql, values);
         [this.result] = rows;
     }

@@ -34,7 +34,7 @@ export default class Property {
             } = req.body;
             const id = parseInt(req.params.property_id, 10);
             const newProperty = new PropertyModel({ id, price });
-            await newProperty.update();
+            await newProperty.update('price');
             return Res.handleSuccess(200, 'successfully updated advert', newProperty.result, res);
         } catch (err) {
             return Res.handleError(500, err.toString(), res);
@@ -65,6 +65,18 @@ export default class Property {
             const { type } = req.query;
             const property = await Model.findOne('properties', 'type', type);
             return Res.handleSuccess(200, 'got specific type Successful', property, res);
+        } catch (err) {
+            return Res.handleError(500, err.toString(), res);
+        }
+    }
+
+    static async markSold(req, res) {
+        try {
+            const { id } = res.locals;
+            const sold = { id, status: 'sold' };
+            const property = new PropertyModel(sold);
+            await property.update('status');
+            return Res.handleSuccess(200, 'sold property successfully', property.result, res);
         } catch (err) {
             return Res.handleError(500, err.toString(), res);
         }
