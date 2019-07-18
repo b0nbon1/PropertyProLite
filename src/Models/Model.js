@@ -20,4 +20,11 @@ export default class Model {
         const { rows } = await Db.query(sql, values);
         [this.result] = rows;
     }
+
+    async deleteOne() {
+        const { id } = this.payload;
+        const { table } = this.payload;
+        const sql = `DELETE FROM ${table} WHERE id='${id}' RETURNING *`;
+        await Db.query(sql);
+    }
 }

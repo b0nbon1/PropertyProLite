@@ -81,4 +81,15 @@ export default class Property {
             return Res.handleError(500, err.toString(), res);
         }
     }
+
+    static async delProperty(req, res) {
+        try {
+            const { id } = res.locals;
+            const property = new PropertyModel({ id, table: 'properties' });
+            await property.deleteOne();
+            return Res.handleOk(200, 'delete property successfully', res);
+        } catch (err) {
+            return Res.handleError(500, err.toString(), res);
+        }
+    }
 }
