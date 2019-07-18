@@ -12,12 +12,6 @@ export default class Model {
         return rows;
     }
 
-    static async findAll(table) {
-        const sql = `SELECT * FROM ${table}`;
-        const { rows } = await Db.query(sql);
-        return rows;
-    }
-
     async update(table, value) {
         const property = this.payload;
         const sql = `UPDATE ${table} SET ${value} = $1 WHERE id = $2 RETURNING *`;
