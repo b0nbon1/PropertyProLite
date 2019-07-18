@@ -1,18 +1,12 @@
 import { config } from 'dotenv';
 
 config();
-let DBUrl;
+const env = process.env.NODE_ENV;
 
-const db = () => {
-    if (process.env.NODE_ENV === 'development') {
-        // eslint-disable-next-line prefer-destructuring
-        DBUrl = process.env.DBURL;
-    } else if (process.env.NODE_ENV === 'test') {
-        DBUrl = process.env.DBURL_TEST;
-    } else {
-        DBUrl = 'postgresql://postgres:postgres@localhost/try';
-    }
-    return DBUrl;
+const DB = {
+    development: process.env.DBURL,
+    test: process.env.DBURL_TEST,
+    production: process.env.DBURL_PROD,
 };
 
-export default db();
+export default DB[env];
