@@ -15,7 +15,6 @@ class DBInit extends Queries {
             conn = await this.pool.connect();
             if (data.length) {
                 const res = await conn.query(sql, data);
-                // console.log(res);
                 conn.release();
                 return res;
             }

@@ -15,5 +15,6 @@ route.get('/property', Validations.type, Property.specType);
 route.get('/property/:property_id', Validations.checkId, Property.getOne);
 route.patch('/property/:property_id/sold', Token.userToken, Validations.checkId, Validations.owner, Property.markSold);
 route.delete('/property/:property_id', Token.userToken, Validations.checkId, Validations.owner, Property.delProperty);
+route.post('/property/:property_id/flag', Token.userToken, Validations.checkId, Validations.report, Property.report);
 
 export default route;

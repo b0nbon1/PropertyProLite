@@ -1,4 +1,3 @@
-
 import date from '../utils/helpers/dates';
 import PropertyModel from '../Models/PropertyModel';
 import Model from '../Models/Model';
@@ -88,6 +87,24 @@ export default class Property {
             const property = new PropertyModel({ id, table: 'properties' });
             await property.deleteOne();
             return Res.handleOk(200, 'delete property successfully', res);
+        } catch (err) {
+            return Res.handleError(500, err.toString(), res);
+        }
+    }
+
+    static async report(req, res) {
+        try {
+            const {
+                reason, description,
+            } = req.body;
+            // eslint-disable-next-line no-shadow
+            const propertyId = parseInt(req.params.property_id, 10);
+            const createdOn = date();
+            const property = new PropertyModel({
+                reason, description, createdOn, propertyId,
+            });
+            await property.report();
+            return Res.handleSuccess(201, 'successfully created a report', property.result, res);
         } catch (err) {
             return Res.handleError(500, err.toString(), res);
         }
