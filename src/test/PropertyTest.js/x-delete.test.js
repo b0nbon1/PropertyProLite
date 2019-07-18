@@ -4,9 +4,9 @@ import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../../../app';
 import jwt from '../../utils/helpers/jwt';
-import data from '../Mockdata/property';
+import Db from '../../database';
 
-let toke, wrongUser;
+let token, wrongUser;
 
 chai.use(chaiHttp);
 chai.should();
@@ -14,17 +14,7 @@ before('generate JWT', () => {
     wrongUser = jwt.newToken({ email: 'testtest@test.com', id: 3 });
 });
 before('generate token', () => {
-    toke = jwt.newToken({ email: 'testtest@tes.co', id: 1 });
-});
-before('generate new property', (done) => {
-    chai.request(app)
-        .post('/api/v2/property')
-        .send(data.property1)
-        .set('authorization', `Bearer ${toke}`)
-        .end((err) => {
-            if (err) return done();
-            done();
-        });
+    token = jwt.newToken({ email: 'testtest@tes.co', id: 1 });
 });
 describe('Delete property', () => {
     it('should delete his/her own posts', (done) => {
@@ -42,7 +32,7 @@ describe('Delete property', () => {
     it('should delete advert successfully', (done) => {
         chai.request(app)
             .delete('/api/v2/property/1')
-            .set('authorization', `Bearer ${toke}`)
+            .set('authorization', `Bearer ${token}`)
             .end((err, res) => {
                 res.should.have.status(200);
                 res.body.should.be.a('object');
@@ -61,5 +51,8 @@ describe('Delete property', () => {
                 if (err) return done();
                 done();
             });
+    });
+    after('RollBack all the tables', async () => {
+        await Db.dropTables();
     });
 });

@@ -5,7 +5,6 @@ import chaiHttp from 'chai-http';
 import app from '../../../app';
 import jwt from '../../utils/helpers/jwt';
 import data from '../Mockdata/property';
-import Db from '../../database';
 
 let token, wrongUser;
 
@@ -69,8 +68,5 @@ describe('Update advert', () => {
                 if (err) return done();
                 done();
             });
-    });
-    after('RollBack all the tables', async () => {
-        await Db.dropTables();
     });
 });
