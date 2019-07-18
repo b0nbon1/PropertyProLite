@@ -34,7 +34,7 @@ export default class Property {
             } = req.body;
             const id = parseInt(req.params.property_id, 10);
             const newProperty = new PropertyModel({ id, price });
-            await newProperty.update('price');
+            await newProperty.update('properties', 'price');
             return Res.handleSuccess(200, 'successfully updated advert', newProperty.result, res);
         } catch (err) {
             return Res.handleError(500, err.toString(), res);
@@ -75,7 +75,7 @@ export default class Property {
             const { id } = res.locals;
             const sold = { id, status: 'sold' };
             const property = new PropertyModel(sold);
-            await property.update('status');
+            await property.update('properties', 'status');
             return Res.handleSuccess(200, 'sold property successfully', property.result, res);
         } catch (err) {
             return Res.handleError(500, err.toString(), res);
