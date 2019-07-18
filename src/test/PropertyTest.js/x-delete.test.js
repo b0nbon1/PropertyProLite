@@ -22,7 +22,7 @@ describe('Delete property', () => {
             .delete('/api/v2/property/1')
             .set('authorization', `Bearer ${wrongUser}`)
             .end((err, res) => {
-                res.should.have.status(406);
+                res.should.have.status(403);
                 res.body.should.be.a('object');
                 res.body.error.should.equal('None of the ads with such id belongs to you');
                 if (err) return done();

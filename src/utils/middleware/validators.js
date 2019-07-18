@@ -85,7 +85,7 @@ export default class Validations {
     static async owner(req, res, next) {
         const owner = res.locals.user.id;
         res.locals.id = parseInt(req.params.property_id, 10);
-        if (!await Advert.checkUser(parseInt(req.params.property_id, 10), owner)) return Res.handleError(406, 'None of the ads with such id belongs to you', res);
+        if (!await Advert.checkUser(parseInt(req.params.property_id, 10), owner)) return Res.handleError(403, 'None of the ads with such id belongs to you', res);
         next();
     }
 
