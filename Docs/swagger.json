@@ -463,6 +463,64 @@
                     }
                 }
             }
+        },
+        "/property/{property_id}/flag": {
+            "post": {
+                "tags": [
+                    "flag"
+                ],
+                "summary": "Updates property type",
+                "operationId": "reportProperty",
+                "deprecated": false,
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/x-www-form-urlencoded",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "property_id",
+                        "in": "path",
+                        "description": "ID of the property",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": false,
+                        "default": "Bearer {token}",
+                        "type": "string"
+                    },
+                    {
+                        "name": "reason",
+                        "in": "formData",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "description",
+                        "in": "formData",
+                        "required": false,
+                        "type": "string",
+                        "description": "price of the property"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Succcessful report"
+                    },
+                    "403": {
+                        "description": "token required"
+                    },
+                    "404": {
+                        "description": "Property with that id does not exists"
+                    }
+                }
+            }
         }
     }
 }

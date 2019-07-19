@@ -24,7 +24,6 @@ export default class Property extends Model {
         const sql = `INSERT INTO flags ( reason, createdOn, description, propertyId) 
         VALUES($1, $2, $3, $4) returning *`;
         const { rows } = await Db.query(sql, values);
-        console.log(rows);
         [this.result] = rows;
     }
 }
