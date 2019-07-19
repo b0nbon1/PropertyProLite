@@ -8,6 +8,7 @@ const router = (app) => {
     app.use(prefix, user);
     app.use(prefix, property);
     app.get('/', (req, res) => Res.handleOk(200, 'Welcome to Property Pro Lite', res));
+    app.all('/', (req, res) => Res.handleError(405, 'Invalid method', res));
     app.use('*', (req, res) => Res.handleError(404, 'Invalid route', res));
 };
 

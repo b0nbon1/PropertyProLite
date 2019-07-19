@@ -17,4 +17,13 @@ export default class Property extends Model {
         if (prop.owner === user) return true;
         return false;
     }
+
+    async report() {
+        const report = this.payload;
+        const values = [report.reason, report.createdOn, report.description, report.propertyId];
+        const sql = `INSERT INTO flags ( reason, createdOn, description, propertyId) 
+        VALUES($1, $2, $3, $4) returning *`;
+        const { rows } = await Db.query(sql, values);
+        [this.result] = rows;
+    }
 }
