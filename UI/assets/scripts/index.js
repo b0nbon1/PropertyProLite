@@ -1,7 +1,7 @@
 const getAll = async () => {
     const response = await fetch('https://property-prolite2.herokuapp.com/api/v2/properties');
     const json = await response.json();
-    console.log(json);
+    // console.log(json);
     if (json.status != 200) {
         console.log(json.error)
         return;
@@ -35,7 +35,7 @@ const getAll = async () => {
             </div>
             `
         })
-        advert.innerHTML = ad;  
+        advert.innerHTML = ad;
     }
 }
 
