@@ -35,7 +35,7 @@ const getAll = async () => {
             </div>
             `
         })
-        advert.innerHTML = ad;  
+        advert.innerHTML = ad;
     }
 }
 
