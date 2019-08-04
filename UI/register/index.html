@@ -19,28 +19,40 @@
             <main class="container">
                 <div id="login-form-wrap">
                         <h2 class="header-form">Register</h2>
-                        <form id="login-form" action="./home/">
+                        <div class="notification">
+                                <div id="info" class="info hide">Info message</div>
+                                <div id="success" class="success hide"></div>
+                                <div id="warning" class="warning hide">Warning message</div>
+                                <div id="error" class="error hide">Error message</div>
+                                <div id="validat" class="validation hide">Validation message 1<br>Validation message 2</div>
+                            </div>
+                        <form id="login-form" action="">
                             <p>
-                                <input type="text" class="input" id="fname" name="fname" placeholder="First Name" required><i class="validation"><span></span><span></span></i>
+                                <input type="text" class="input" id="fname" name="fname" placeholder="First Name" required>
                             </p>
                             <p>
-                                <input type="text" class="input" id="lname" name="lname" placeholder="Last Name" required><i class="validation"><span></span><span></span></i>
+                                <input type="text" class="input" id="lname" name="lname" placeholder="Last Name" required>
                             </p>
                             <p>
-                                <input type="tel" class="input"  id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required><i class="validation"><span></span><span></span></i>
+                                <input type="tel" class="input"  id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required>
                             </p>
                             <p>
-                                <input type="text" class="input" id="address" name="address" placeholder="Address" required><i class="validation"><span></span><span></span></i>
+                                <input type="text" class="input" id="address" name="address" placeholder="Address" required>
                             </p>
                             <p>
-                            <input type="email" class="input" id="email" name="email" placeholder="email" required><i class="validation"><span></span><span></span></i>
+                            <input type="email" class="input" id="email" name="email" placeholder="email" required>
                             </p>
                             <p>
-                            <input type="password" class="input" id="password" name="password" placeholder="password" required><i class="validation"><span></span><span></span></i>
+                            <input type="password" class="input" id="password" name="password" placeholder="password" required>
                             </p>
                             <p>
-                            <input type="submit" id="submit" value="register">
+                            <input type="submit" id="submit" value="register" class="loading">
                             </p>
+                            <div class="LoaderBalls hide">
+                                    <div class="LoaderBalls__item"></div>
+                                    <div class="LoaderBalls__item"></div>
+                                    <div class="LoaderBalls__item"></div>
+                            </div>
                         </form>
                         <div id="create-account-wrap">
                         <p>Already have an account? <a id="popout">Log in</a><p>
@@ -51,5 +63,6 @@
                 <p> &copy; <span id="current-date"></span>, <a href="https://www.bonbo.io.ke">Bonvic</a>  </p>
             </footer>
         <script src="../assets/scripts/main.js" async defer></script>
+        <script src="./index.js" async defer></script>
     </body>
 </html>

@@ -5,6 +5,8 @@
 @import url("./modal.css");
 @import url("./forms.css");
 @import url("./search.css");
+@import url("./notify.css");
+@import url("./loaders.css");
 
 /*** reuse **/
 .right 
@@ -143,6 +145,9 @@ main.container
 }
 .show{
   display: block;
+}
+.flex{
+  display: flex;
 }
 /**** footer ***/
 footer.footer

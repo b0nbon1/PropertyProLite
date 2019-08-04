@@ -33,11 +33,10 @@ const getAll = async () => {
                 </div>
             </a>
             </div>
-            `
-        })
+            `;
+        });
         advert.innerHTML = ad;
     }
 }
 
 getAll();
-
