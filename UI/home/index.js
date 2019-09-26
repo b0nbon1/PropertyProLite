@@ -14,7 +14,7 @@ const getAll = async () => {
             let {price, address, type, status, imageurl, id} = prop;
             ad += `
             <div class="card">
-            <a href="./advert#${id}">
+            <a href="../advert#${id}">
                 <div class="cover-image">
                     <img class="image" src=${imageurl} alt="property picture">
                     <div class="price-block">
@@ -29,7 +29,7 @@ const getAll = async () => {
                 </div>
                 <div class="details">
                     ${address}
-                <a href="./advert"><h1>${type}</h1></a>
+                <a href="../advert#${id}"><h1>${type}</h1></a>
                 </div>
             </a>
             </div>

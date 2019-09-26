@@ -41,7 +41,14 @@
             <div class="modal-content">
                 <span class="closeBtn" id="closeBtn">&times;</span>
                     <h2 class="header-form">Login</h2>
-                    <form id="login-form" action="./home/">
+                    <div class="notification">
+                        <div id="info" class="info hide">Info message</div>
+                        <div id="success" class="success hide"></div>
+                        <div id="warning" class="warning hide">Warning message</div>
+                        <div id="error" class="error hide">Error message</div>
+                        <div id="validat" class="validation hide">Validation message 1<br>Validation message 2</div>
+                    </div>
+                    <form id="login-form">
                       <p>
                       <input type="email" class="input" id="email" name="email" placeholder="email" required>
                       </p>
@@ -51,6 +58,11 @@
                       <p>
                       <input type="submit" id="submit" value="Login">
                       </p>
+                      <div class="LoaderBalls hide">
+                        <div class="LoaderBalls__item"></div>
+                        <div class="LoaderBalls__item"></div>
+                        <div class="LoaderBalls__item"></div>
+                     </div>
                     </form>
                     <div id="create-account-wrap">
                       <p>Not a member? <a href="./register/">Create Account</a><p>
@@ -61,7 +73,6 @@
     <footer>
         <p> &copy; <span id="current-date"></span>, <a href="https://www.bonbo.io.ke">Bonvic</a>  </p>
     </footer>
-        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
         <script src="./assets/scripts/main.js"></script>
         <script src="./assets/scripts/index.js"></script>
     </body>
