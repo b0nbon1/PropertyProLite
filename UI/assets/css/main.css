@@ -5,6 +5,8 @@
 @import url("./modal.css");
 @import url("./forms.css");
 @import url("./search.css");
+@import url("./notify.css");
+@import url("./loaders.css");
 
 /*** reuse **/
 .right 
@@ -144,23 +146,22 @@ main.container
 .show{
   display: block;
 }
-/**** footer ***/
-footer.footer
-{
-  margin-bottom: 0;
-  width: 100%;
-  position: fixed;
+.flex{
+  display: flex;
 }
+/**** footer ***/
 footer p 
 {
   bottom: 0;
   padding: 0;
   margin: 0;
+  width: 100%;
   height: 2rem;
   line-height: 3;
   font-size: 1rem;
   background-color: #dbd8d8;
   text-align: center;
+  position: fixed;
 }
 
 /****media queries ***/

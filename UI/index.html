@@ -34,131 +34,35 @@
             </div>
         </section>
         <hr class="hr-text" data-content="">
-        <section class="advert">
-            <div class="card"><a href="./advert/">
-                <div class="cover-image">
-                    <img class="image" src="./assets/images/home2.jpeg" alt="">
-                    <div class="price-block">
-                        <span class="status avail">
-                            available
-                        </span>
-                        <span class="price">  
-                            <h1>$240,000</h1>
-                        </span>
-                    </div>
-                    
-                </div>
-                <div class="details">
-                    Karen flats
-                <a href="./advert"><h1>4 bedroom apartment</h1></a>
-                </div>
-            </a></div>
-            <div class="card"><a href="./advert/">
-                    <div class="cover-image">
-                            <img class="image" src="./assets/images/home1.jpg" alt="">
-                            <div class="price-block">
-                                <span class="status not-avail">
-                                    sold
-                                </span>
-                                <span class="price">
-                                    <h1>$170,000</h1>
-                                </span>
-                            </div>
-                            
-                        </div>
-                        <div class="details">
-                            Kilimani homes
-                        <a href="./advert"><h1>3 bedroom mansion</h1></a>
-                        </div>
-            </a></div>
-            <div class="card"><a href="./advert/">
-                    <div class="cover-image">
-                            <img class="image" src="./assets/images/home2.jpeg" alt="">
-                            <div class="price-block">
-                                <span class="status avail">
-                                    available
-                                </span>
-                                <span class="price">
-                                    <h1>$410,000</h1>
-                                </span>
-                            </div>
-                            
-                        </div>
-                        <div class="details">
-                            Karen flats
-                        <a href="./advert"><h1>4 bedroom apartment</h1></a>
-                        </div>
-            </a></div>
-            <div class="card"><a href="./advert/">
-                    <div class="cover-image">
-                            <img class="image" src="./assets/images/home1.jpg" alt="">
-                            <div class="price-block">
-                                <span class="status avail">
-                                    available
-                                </span>
-                                <span class="price">
-                                    <h1>$120,000</h1>
-                                </span>
-                            </div>
-                            
-                        </div>
-                        <div class="details">
-                            Kilimani homes
-                        <a href="./advert"><h1>3 bedroom mansion</h1></a>
-                        </div>
-            </a></div>
-            <div class="card"> <a href="./advert/">
-                    <div class="cover-image">
-                            <img class="image" src="./assets/images/home1.jpg" alt="">
-                            <div class="price-block">
-                                <span class="status avail">
-                                    available
-                                </span>
-                                <span class="price">
-                                    <h1>$310,000</h1>
-                                </span>
-                            </div>
-                            
-                        </div>
-                        <div class="details">
-                            Karen flats
-                        <a href="./advert"><h1>4 bedroom apartment</h1></a>
-                        </div>
-            </a></div>
-            <div class="card"> <a href="./advert/">
-                    <div class="cover-image">
-                            <img class="image" src="./assets/images/home2.jpeg" alt="">
-                            <div class="price-block">
-                                <span class="status not-avail">
-                                    sold
-                                </span>
-                                <span class="price">
-                                    <h1>$90,000</h1>
-                                </span>
-                            </div>
-                            
-                        </div>
-                        <div class="details">
-                            Kilimani homes
-                        <a href="./advert"><h1>3 bedroom mansion</h1></a>
-                        </div>
-                    </a></div>
+        <section class="advert" id="advert">
         </section>
     </main>
         <div id="login-modal" class="login-modal">
             <div class="modal-content">
                 <span class="closeBtn" id="closeBtn">&times;</span>
                     <h2 class="header-form">Login</h2>
-                    <form id="login-form" action="./home/">
+                    <div class="notification">
+                        <div id="info" class="info hide">Info message</div>
+                        <div id="success" class="success hide"></div>
+                        <div id="warning" class="warning hide">Warning message</div>
+                        <div id="error" class="error hide">Error message</div>
+                        <div id="validat" class="validation hide">Validation message 1<br>Validation message 2</div>
+                    </div>
+                    <form id="login-form">
                       <p>
-                      <input type="email" class="input" id="email" name="email" placeholder="email" required><i class="validation"><span></span><span></span></i>
+                      <input type="email" class="input" id="email" name="email" placeholder="email" required>
                       </p>
                       <p>
-                      <input type="password" class="input" id="password" name="password" placeholder="password" required><i class="validation"><span></span><span></span></i>
+                      <input type="password" class="input" id="password" name="password" placeholder="password" required>
                       </p>
                       <p>
                       <input type="submit" id="submit" value="Login">
                       </p>
+                      <div class="LoaderBalls hide">
+                        <div class="LoaderBalls__item"></div>
+                        <div class="LoaderBalls__item"></div>
+                        <div class="LoaderBalls__item"></div>
+                     </div>
                     </form>
                     <div id="create-account-wrap">
                       <p>Not a member? <a href="./register/">Create Account</a><p>
@@ -170,5 +74,6 @@
         <p> &copy; <span id="current-date"></span>, <a href="https://www.bonbo.io.ke">Bonvic</a>  </p>
     </footer>
         <script src="./assets/scripts/main.js"></script>
+        <script src="./assets/scripts/index.js"></script>
     </body>
 </html>
